@@ -1,4 +1,5 @@
 Bacteria [] bob;
+int m, m2;
 
  //declare bacteria variables here   
  void setup()   
@@ -18,12 +19,15 @@ Bacteria [] bob;
  	for(int c = 0; c<bob.length; c = c + 1){
  	 bob[c].show();
  	 bob[c].move();
+
  	}
- 	//move and show the bacteria   
+ 	//move and show the bacteria
+
  }  
 
+void mousePressed(){
 
-
+}
  class Bacteria    
  {     
  	int myColor;
@@ -34,8 +38,18 @@ Bacteria [] bob;
  		y=250;
  	}
  	void move(){
- 		x=x+(int)(Math.random()*11)-5;
- 		y=y+(int)(Math.random()*11)-5;
+ 		if(x>mouseX)
+ 			m=-1;
+ 		if(x<mouseX)
+ 			m=1;
+ 		if(y>mouseY)
+ 			m2=-1;
+ 		if(y<mouseY)
+ 			m2=1;
+
+
+ 		x=x+(int)(Math.random()*11)-5+m;
+ 		y=y+(int)(Math.random()*11)-5+m2;
 
 
  	}
